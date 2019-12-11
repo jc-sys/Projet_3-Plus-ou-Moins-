@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1576028851 source:c:\users\dr jac\desktop\ati\plus-ou-moins\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
