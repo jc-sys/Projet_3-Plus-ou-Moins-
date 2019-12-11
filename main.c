@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 void menu ()
 {
     int choix;
@@ -39,11 +38,11 @@ int jouer()
     int mode;
     int niveau;
     int compteur;
-    // Génération du nombre aléatoire
-    srand(time(NULL));
+
+    srand(time(NULL));// génère les nombres aléatoires
     do
     {
-    printf("Choisissez votre niveau de difficulte\n");
+    printf("Choisissez votre niveau de difficulte\n");//Choix du niveau
     printf("1 pour entre 1 et 100\n");
     printf("2 pour entre 1 et 1000\n");
     printf("3 pour entre 1 et  10000\n");
@@ -66,7 +65,7 @@ int jouer()
 	MIN=1;
 	nombreMystere = (rand() % (MAX - MIN + 1)) + MIN;
     }
-    printf("1- Mode 1 joueur\n");
+    printf("1- Mode 1 joueur\n");//Choix du mode par le joueur
     printf("2- Mode 2 joueurs\n");
     printf("Choisissez un mode\n");
     scanf("%d",&mode);
@@ -171,31 +170,10 @@ FILE* fichier = NULL;
 fichier = fopen("test.txt", "w");
 if (fichier != NULL)
 {
-fprintf(fichier,"%d ans",v);
+fprintf(fichier,"%d ",v);
 printf("\n");
 fclose(fichier);
 }
-}
-void mScore()
-{
-
-    static const char filename[] = "text.txt";
-    FILE *file = fopen ( filename, "w" );
-    if ( file != NULL )
-    {
-    char line [ 128 ]; /* or other suitable maximum line size */
-
-    while ( fgets ( line, sizeof line, file ) != NULL ) /* read a line */
-    {
-    printf("Ligne : %s", line); /* write the line */
-    }
-    fclose ( file );
-    }
-    else
-    {
-    perror ( filename ); /* why didn't the file open? */
-    }
-    return 0;
 }
 int main ()
 {
